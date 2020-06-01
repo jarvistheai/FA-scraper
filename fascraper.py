@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+import os
+os.system('clear')
+
+import time, datetime
 from requests_html import HTMLSession
 session = HTMLSession()
 
@@ -24,14 +28,16 @@ colleft = r.html.find('.userpage-layout-left-col', first=True)
 rwatchers = colleft.find('.userpage-left-column')[3]
 watchers = rwatchers.find('.floatright', first=True).text
 wnum = watchers.split()[-1].strip(')') + ' watchers total'
+timestampraw = datetime.datetime.now()
+timestamp = f"last update {timestampraw.strftime('%Y-%m-%d %I:%M%p')}"
 
+os.system('clear')
 
-print()
-print('-'*len(title))
+print('\n' + '-'*len(title))
 print(title)
 print('-'*len(title))
 print(' '*int((len(title)- len(sidebar))/2) + sidebar)
 print('-'*len(title))
 print(' '*int((len(title)- len(wnum))/2) + wnum)
 print('-'*len(title))
-print()
+print(' '*int((len(title)- len(timestamp))/2) + timestamp + '\n\n')
