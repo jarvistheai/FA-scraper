@@ -32,6 +32,7 @@ watchers = rwatchers.find('.floatright', first=True).text
 wnumraw = watchers.split()[-1].strip(')')
 wnum = wnumraw + ' watchers total'
 
+updatestring =  'updates since last pull'
 timestampraw = datetime.datetime.now()
 timestamp = f"last update {timestampraw.strftime('%Y-%m-%d %I:%M%p')}"
 
@@ -60,6 +61,7 @@ if any(c.isdigit()for c in sidebar):
 if any(c.isdigit()for c in newmsgs):
     print('-'*len(title))
     print(' '*int((len(title)- len(newmsgs))/2) + newmsgs)
+    print(' '*int((len(title)- len(updatestring))/2) + updatestring)
 
 # print total watchers
 print('-'*len(title))
