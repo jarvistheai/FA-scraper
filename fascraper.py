@@ -2,7 +2,7 @@
 
 import os
 os.system('clear')
-# os.chdir('/place/holder/path')
+os.chdir('/Users/jarvis/coding/python/FA-scraper/')
 
 import time, datetime
 from memfunc import storedata, getdata
